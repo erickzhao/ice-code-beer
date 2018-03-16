@@ -27,7 +27,12 @@ class App extends Component {
     const { PATRICK } = this.state;
     const PATRICK2 = PATRICK && PATRICK.map(p => (
       <p className="App-intro">
-        {JSON.stringify(p)}
+        <img src={p.image_url}/>
+        <h1>{p.name}</h1>
+        <p>{p.price}</p>
+        <p>{p.rating}</p>
+        <p>{p.distance}</p>
+        <p>{p.location.display_address.join(", ")}</p>
       </p>
     ))
     return (
