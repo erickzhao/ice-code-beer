@@ -9,6 +9,7 @@
     "axios": "^0.17.1",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
+    "json2csv": "^4.0.2",
     "lodash": "^4.17.5"
   },
   "devDependencies": {
@@ -20,4 +21,3 @@
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   }
 }
-
