@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     const download = () => {
-      const data = JSON.parse(localStorage.getItem('pubs'));
+      const data = JSON.parse(sessionStorage.getItem('pubs'));
       csvConverter.convert(data);
     }
     const gerts = () => {
@@ -42,9 +42,9 @@ class App extends Component {
         this.setState({
           index: this.state.index + 1
         })
-        const saved = JSON.parse(localStorage.getItem('pubs')) || [];
+        const saved = JSON.parse(sessionStorage.getItem('pubs')) || [];
         saved.push(this.state.PATRICK[this.state.index]);
-        localStorage.setItem('pubs', JSON.stringify(saved));
+        sessionStorage.setItem('pubs', JSON.stringify(saved));
       }
     }
     const hurts = () => {

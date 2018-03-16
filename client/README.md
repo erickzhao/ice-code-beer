@@ -1451,12 +1451,12 @@ For example:
 
 #### `src/setupTests.js`
 ```js
-const localStorageMock = {
+const sessionStorageMock = {
   getItem: jest.fn(),
   setItem: jest.fn(),
   clear: jest.fn()
 };
-global.localStorage = localStorageMock
+global.sessionStorage = sessionStorageMock
 ```
 
 >Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
