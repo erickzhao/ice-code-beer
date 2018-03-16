@@ -71,6 +71,32 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">FIND BARS TO GO TO ON ST.PATRICK'S DAY</h1>
         </header>
+        <p>Price:</p>
+        <form action="">
+          <label for="$">$</label>
+          <input type="radio" id="price1" name="$" />
+          <label for="$$">$$</label>
+          <input type="radio" id="price2" name="$$" />
+          <label for="$$$$">$$$</label>
+          <input type="radio" id="price3" name="$$" />
+        </form>
+        <p>Rating:</p>
+        <form action="">
+          <label for="1">1</label>
+          <input type="radio" id="rating1" name="1" />
+          <label for="2">2</label>
+          <input type="radio" id="rating2" name="2" />
+          <label for="3">3</label>
+          <input type="radio" id="rating3" name="3" />
+          <label for="4">4</label>
+          <input type="radio" id="rating4" name="4" />
+          <label for="5">5</label>
+          <input type="radio" id="rating5" name="5" />
+        </form>
+        <div class="slidecontainer">
+        <label for="distance">Max Distance:</label>
+          <input type="range" min="1" max = "10" class="slider" id="distance"s/>
+        </div>
         { PATRICK2 }
         <button onClick={hurts}>IT HURTS</button>
         <button onClick={gerts}>IT GERTS</button>
