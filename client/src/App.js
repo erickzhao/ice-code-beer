@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = { 
       PATRICK: null,
-      index: 0
+      index: 0,
+      saved: {}
     };
   }
 
@@ -27,29 +28,35 @@ class App extends Component {
       })
   }
 
-  
-
-  
-
   render() {
-    const increment = () => {
+    const gerts = () => {
+      if (this.state.PATRICK && this.state.index < this.state.PATRICK.length) {
+        this.setState({
+          index: this.state.index + 1
+        })
+        const saved = JSON.parse(localStorage.getItem('pubs')) || [];
+        saved.push(this.state.PATRICK[this.state.index]);
+        localStorage.setItem('pubs', JSON.stringify(saved));
+        console.log(localStorage.getItem('pubs'));
+      }
+    }
+    const hurts = () => {
       if (this.state.PATRICK && this.state.index < this.state.PATRICK.length) {
         this.setState({
           index: this.state.index + 1
         })
       }
     }
-    console.log(this.state);
     const { PATRICK, index } = this.state;
     const PATRICK2 = PATRICK && [PATRICK[index]].map(p => (
-      <p className="App-intro">
+      <div className="App-intro" key={p.id}>
         <img className="bar-image" src={p.image_url}/>
         <h1>{p.name}</h1>
         <p>{p.location.display_address.join(", ")}</p>
         <p>{p.price}</p>
         <p>Rating: {p.rating}</p>
         <p>Distance: {(p.distance/1000).toFixed(1)} km</p>
-      </p>
+      </div>
     ))
     return (
       <div className="App">
@@ -58,8 +65,8 @@ class App extends Component {
           <h1 className="App-title">FIND BARS TO GO TO ON ST.PATRICK'S DAY</h1>
         </header>
         { PATRICK2 }
-        <button onClick={increment}>Bunk off</button>
-        <button onClick={increment}>Crack on</button>
+        <button onClick={hurts}>IT HURTS</button>
+        <button onClick={gerts}>IT GERTS</button>
       </div>
     );
   }
