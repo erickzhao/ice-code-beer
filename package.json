@@ -1,0 +1,23 @@
+{
+  "name": "ice-code-beer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:erickzhao/ice-code-beer.git",
+  "author": "erick <erick@hotmail.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+  }
+}
+
